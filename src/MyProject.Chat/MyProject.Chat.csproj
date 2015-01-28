@@ -159,6 +159,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\common\history.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -181,6 +182,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+    <Content Include="fonts\oswald\Oswald-Bold.ttf" />
+    <Content Include="fonts\oswald\Oswald-BoldItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-Demi-BoldItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-DemiBold.ttf" />
+    <Content Include="fonts\oswald\Oswald-Extra-LightItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-ExtraLight.ttf" />
+    <Content Include="fonts\oswald\Oswald-Heavy.ttf" />
+    <Content Include="fonts\oswald\Oswald-HeavyItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-Light.ttf" />
+    <Content Include="fonts\oswald\Oswald-LightItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-Medium.ttf" />
+    <Content Include="fonts\oswald\Oswald-MediumItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-Regular.ttf" />
+    <Content Include="fonts\oswald\Oswald-RegularItalic.ttf" />
+    <Content Include="fonts\oswald\Oswald-Stencil.otf" />
     <None Include="readme.html" />
   </ItemGroup>
   <PropertyGroup>

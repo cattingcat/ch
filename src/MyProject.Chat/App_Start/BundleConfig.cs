@@ -9,7 +9,7 @@ namespace MyProject.Chat
         {
             bundles.Add(new ScriptBundle("~/scripts")
                 .IncludeDirectory("~/scripts/libs", "*.js")
-                .Include("~/scripts/app.js"));
+                .Include("~/scripts/common/*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/site.css"));

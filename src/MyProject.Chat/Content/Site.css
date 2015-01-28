@@ -1,14 +1,15 @@
-﻿/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+﻿@font-face {
+    font-family: oswald-light;
+    src: url(/fonts/oswald/Oswald-Light.ttf);
 }
 
-
-
+html, body {
+    height:100%;
+}
 
 body {
+    font-family: oswald-light;
+    
     padding: 0;
     margin: 0;
 }
@@ -17,7 +18,6 @@ footer, header {
     background-color: #1F807B;
     width: 100%;
     box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.93);
-
     
     display: flex;
     flex-direction: row;
@@ -32,6 +32,10 @@ header {
     padding: 5px;
 }
 
+footer {
+    position: relative;
+}
+
 footer div, header div {
     flex-grow: 1;
     margin-left: 10px;
@@ -44,18 +48,19 @@ header nav {
 
 article {
     background-color: #0071BC;
-    height: 9000px;
-    padding: 5px;
+    
+    padding: 25px;
 }
 
 aside {
-    background-color: #0071BC;
+    background-color: #b6ff00;
     padding: 25px;
 }
 
 
 main {
-    margin-top: 25px; /* after header */
+    padding-top: 25px; /* after header */
+    min-height: calc(100% - 80px); /* -footer.height */
 
     display: flex;
     flex-direction: row;
@@ -69,7 +74,9 @@ main article {
     flex-grow: 4;
 }
 
-
+nav {
+    text-transform: uppercase;
+}
 nav ul {
     display: flex;
     flex-direction: row;
@@ -80,7 +87,6 @@ nav ul {
 
     text-shadow: 2px 2px 4px #000000;
 }
-
 nav ul li {
     font-size: 11pt;
     display: block;
@@ -88,6 +94,25 @@ nav ul li {
     cursor: default
 }
 
-nav ul li:hover {
+li a:link, a:visited, a:link:active, a:visited:active{
+    text-decoration: none;
+    cursor: auto;
+    color: black;
+}
+nav ul li a:hover {
     color: #fff;
+}
+
+
+
+
+
+
+@media (max-width:500px){
+    main {
+        flex-direction: column;
+    }
+    aside {
+        padding: 25px;
+    }
 }

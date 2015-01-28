@@ -30,8 +30,34 @@ var TimerExample = React.createClass({
     }
 });
 
-
 React.render(
     <TimerExample start={Date.now()} />,
     document.querySelector('footer .timer')
+);
+
+
+var HistoryLog = React.createClass({
+    getInitialState: function(){
+        return { log: [window.location.href] };
+    },
+    componentDidMount: function(){
+        var self = this;
+        window.onhashchange = function(e){
+            var log = self.state.log;
+            log.push(e.newURL);
+            self.setState({log: log});
+        };
+    },
+    render: function() {
+        return <div>{
+            this.state.log.map(function(i){
+                return <div> {i} </div>
+            })}
+        </div>;
+    }
+});
+
+React.render(
+    <HistoryLog />,
+    document.querySelector('aside')
 );
