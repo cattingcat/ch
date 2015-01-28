@@ -41,12 +41,15 @@ var HistoryLog = React.createClass({
         return { log: [window.location.href] };
     },
     componentDidMount: function(){
-        var self = this;
-        window.onhashchange = function(e){
-            var log = self.state.log;
-            log.push(e.newURL);
-            self.setState({log: log});
-        };
+        window.addEventListener('hashchange', this.hashChange);
+    },
+    componentWillUnmount: function(){
+        window.removeEventListener('hashchange', this.hashChange);
+    },
+    hashChange: function(e){
+        var log = this.state.log;
+        log.push(e.newURL);
+        this.setState({log: log});
     },
     render: function() {
         return <div>{
@@ -60,4 +63,31 @@ var HistoryLog = React.createClass({
 React.render(
     <HistoryLog />,
     document.querySelector('aside')
+);
+
+var MainView = React.createClass({
+    getInitialState: function(){
+        return { route: window.location.hash };
+    },
+    componentDidMount: function(){
+        window.addEventListener('hashchange', this.hashChange);
+    },
+    componentWillUnmount: function(){
+        window.removeEventListener('hashchange', this.hashChange);
+    },
+    hashChange: function(){
+        this.setState({ route: window.location.hash });
+    },
+    render: function() {
+        if(this.state.route == '#i1'){
+            return(<strong> 1 </strong>);
+        } else if(this.state.route == '#i2') {
+            return(<strong> 2 </strong>);
+        }
+    }
+});
+
+React.render(
+    <MainView />,
+    document.querySelector('article')
 );
