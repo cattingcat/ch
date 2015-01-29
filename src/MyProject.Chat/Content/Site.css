@@ -14,7 +14,7 @@ body {
     margin: 0;
 }
 
-footer, header {
+body > footer, body > header {
     background-color: #1F807B;
     width: 100%;
     box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.93);
@@ -25,14 +25,14 @@ footer, header {
     justify-content: space-around;
 }
 
-header {
+body > header {
     position: fixed;    
     top: 0;
     left: 0;
     padding: 5px;
 }
 
-footer {
+body > footer {
     position: relative;
 }
 
@@ -53,12 +53,12 @@ article {
 }
 
 aside {
-    background-color: #b6ff00;
+    background-color: #8979BA;
     padding: 25px;
 }
 
 
-main {
+body > main {
     padding-top: 25px; /* after header */
     min-height: calc(100% - 80px); /* -footer.height */
 
@@ -67,10 +67,10 @@ main {
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
-main aside {
+main > aside {
     flex-grow: 1;
 }
-main article {
+main > article {
     flex-grow: 4;
 }
 
@@ -104,15 +104,42 @@ nav ul li a:hover {
 }
 
 
+div.item {
+    background-color: rgb(144, 94, 207);
+
+    box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.93);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    margin-bottom: 25px;
+}
+div.item section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+div.item aside {
+    flex-grow: 1;
+}
+div.item article {
+    flex-grow: 4;
+}
+div.item header {
+
+}
 
 
 
 
 @media (max-width:500px){
-    main {
+    body > main {
         flex-direction: column;
     }
-    aside {
+    body > main > aside {
         padding: 25px;
     }
 }

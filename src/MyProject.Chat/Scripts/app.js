@@ -65,6 +65,43 @@ React.render(
     document.querySelector('aside')
 );
 
+var Item = React.createClass({
+    getInitialState: function(){
+        return {
+            head: 'head',
+            aside: 'aside from class',
+            article: 'articla from clas'
+        };
+    },
+    componentDidMount: function(){
+    },
+    componentWillUnmount: function(){
+    },
+    hideContent : function(){
+        var element = this.getDOMNode();
+        var content = element.querySelector('section');
+
+        if(content.style.display == 'none'){
+            content.style.display ='flex';
+        } else {
+            content.style.display = 'none';
+        }
+    },
+    render: function() {
+        return(
+            
+            <div className="item">
+                <header onClick={this.hideContent}> {this.props.head} </header>
+                <section onClick={this.props.handleClick}>
+                    <aside> {this.state.aside} </aside>
+                    <article> {this.state.article} </article>
+                </section>
+            </div>
+            
+            );
+    }
+});
+
 var MainView = React.createClass({
     getInitialState: function(){
         return { route: window.location.hash };
@@ -78,16 +115,17 @@ var MainView = React.createClass({
     hashChange: function(){
         this.setState({ route: window.location.hash });
     },
+    itemClick: function(e){
+        console.log(e);
+    },
     render: function() {
-        if(this.state.route == '#i1'){
-            return(<strong> 1 </strong>);
-        } else if(this.state.route == '#i2') {
-            return(<strong> 2 </strong>);
-        }
+        return( 
+            <Item head="prop head" handleClick={this.itemClick}/> 
+            );
     }
 });
 
 React.render(
     <MainView />,
-    document.querySelector('article')
+    document.querySelector('article div.main-content')
 );
