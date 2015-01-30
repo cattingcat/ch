@@ -202,6 +202,7 @@
     <Content Include="Scripts\components\theme.jsx" />
     <Content Include="Scripts\components\history-log.jsx" />
     <Content Include="Scripts\components\timer.jsx" />
+    <Content Include="Scripts\components\chat.jsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
