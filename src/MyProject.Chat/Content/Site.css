@@ -3,7 +3,8 @@
     src: url(/fonts/oswald/Oswald-Light.ttf);
 }
 
-html, body {
+html, 
+body {
     height:100%;
 }
 
@@ -14,8 +15,32 @@ body {
     margin: 0;
 }
 
-body > footer, body > header {
-    background-color: #1F807B;
+header, 
+footer {
+    background-color: #1F807B
+}
+
+button {
+    text-transform: uppercase;
+    border-radius: 0;
+    border-width: 0;
+    background-color: #a3c644;;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 100ms linear;
+}
+button:hover{
+    background-color: rgb(143, 193, 143);
+}
+button:focus {
+    outline: 0;
+}
+
+body > footer, 
+body > header {
     width: 100%;
     box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.93);
     
@@ -47,13 +72,9 @@ header nav {
 }
 
 article {
-    background-color: #0071BC;
-    
     padding: 25px;
 }
-
 aside {
-    background-color: #8979BA;
     padding: 25px;
 }
 
@@ -68,9 +89,11 @@ body > main {
     justify-content: flex-start;
 }
 main > aside {
+    background-color: lightblue;
     flex-grow: 1;
 }
 main > article {
+    background-color: white;  
     flex-grow: 4;
 }
 
@@ -91,7 +114,7 @@ nav ul li {
     font-size: 11pt;
     display: block;
 
-    cursor: default
+    cursor: default;
 }
 
 li a:link, a:visited, a:link:active, a:visited:active{
@@ -104,10 +127,10 @@ nav ul li a:hover {
 }
 
 
-div.item {
-    background-color: rgb(144, 94, 207);
+div.theme {
+    background-color: #e6eef2;
 
-    box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.93);
+    box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.93);
 
     display: flex;
     flex-direction: column;
@@ -116,20 +139,32 @@ div.item {
 
     margin-bottom: 25px;
 }
-div.item section{
+div.theme section{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
-div.item aside {
+div.theme aside {
+    background-color: lightblue;
     flex-grow: 1;
 }
-div.item article {
+div.theme article {
+    background-color: lightblue;
     flex-grow: 4;
 }
-div.item header {
+div.theme header {
+    padding-left: 10px;
+}
+div.theme header nav ul {
+    justify-content: flex-start;
+}
+div.theme > div.items {
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
 
+div.theme > div.items > div.item {
 }
 
 

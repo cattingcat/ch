@@ -114,7 +114,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\components\" />
     <Folder Include="Scripts\libs\" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +198,10 @@
     <Content Include="fonts\oswald\Oswald-RegularItalic.ttf" />
     <Content Include="fonts\oswald\Oswald-Stencil.otf" />
     <None Include="readme.html" />
+    <Content Include="Scripts\components\main-view.jsx" />
+    <Content Include="Scripts\components\theme.jsx" />
+    <Content Include="Scripts\components\history-log.jsx" />
+    <Content Include="Scripts\components\timer.jsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
