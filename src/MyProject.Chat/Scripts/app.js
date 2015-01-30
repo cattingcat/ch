@@ -10,10 +10,11 @@ React.render(
 );
 
 var routing = [
-    {pattern: /.*theme.*/, component: Theme},
+    { pattern: /.*theme.*/, component: Theme },
+    { pattern: /.*chat.*/, component: Chat },
 ]
 
 React.render(
     <MainView routing={routing} />,
-    document.querySelector('article div.main-content')
+    document.querySelector('main > article')
 );

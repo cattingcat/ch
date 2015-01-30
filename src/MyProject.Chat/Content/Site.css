@@ -31,6 +31,7 @@ button {
     font-weight: bold;
     color: white;
     transition: background-color 100ms linear;
+    margin: 5px;
 }
 button:hover{
     background-color: rgb(143, 193, 143);
@@ -166,6 +167,33 @@ div.theme > div.items {
 
 div.theme > div.items > div.item {
 }
+
+
+div.chat {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    background-color: aliceblue;
+    box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.93);
+}
+div.chat > article {
+    flex-grow: 4;
+}
+div.chat > article > div {
+    padding: 3px;
+}
+div.chat > article > div:nth-child(odd){
+    background-color: lightblue;
+}
+div.chat > footer {
+    background-color: lightblue;
+    padding: 3px;
+    flex-grow: 1;
+}
+
+
 
 
 
