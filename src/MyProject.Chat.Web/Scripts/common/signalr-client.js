@@ -1,12 +1,12 @@
 ﻿var signalrClient = {
-    send: function (msg) {
-        $.connection.chatHub.server.send(msg);
+    send: function (group, msg) {
+        $.connection.chatHub.server.send(group, msg);
     },
-    subscribe: function (func, callback) {
+    subscribe: function (func, callback, done) {
         $.connection.chatHub.client[func] = callback;
-        $.connection.hub.start();
+        $.connection.hub.start().done(done);
     },
-    connect: function () {
-        // TODO connect to some signalr-group
+    connect: function (group) {
+        $.connection.chatHub.server.join(group);
     }
 }

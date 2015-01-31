@@ -11,9 +11,20 @@ namespace MyProject.Chat.Web.Hubs
     [HubName("chatHub")]
     public class ChatHub : Hub
     {
-        public Task Send(dynamic message)
+        public Task Send(string group, dynamic message)
         {
-            return Clients.All.SendMessage(message);
+            // TODO fix
+            return Clients.Group(group).SendMessage(Context.ConnectionId.Substring(0, 5) + ": "+ message);
+        }
+
+        public Task Join(string group)
+        {
+            return Groups.Add(Context.ConnectionId, group);
+        }
+
+        public Task Leave(string group)
+        {
+            return Groups.Remove(Context.ConnectionId, group);
         }
     }
 }

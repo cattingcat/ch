@@ -135,6 +135,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\TestController.cs" />
@@ -202,6 +203,8 @@
     <Content Include="fonts\oswald\Oswald-RegularItalic.ttf" />
     <Content Include="fonts\oswald\Oswald-Stencil.otf" />
     <Content Include="Handlers\WebSocketHandler.ashx" />
+    <None Include="Properties\PublishProfiles\Build-Debug.pubxml" />
+    <None Include="Properties\PublishProfiles\Build-Release.pubxml" />
     <None Include="readme.html" />
     <Content Include="Scripts\components\main-view.jsx" />
     <Content Include="Scripts\components\theme.jsx" />

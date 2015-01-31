@@ -1,15 +1,21 @@
 ﻿var Chat = React.createClass({
     getInitialState: function(){
+        this.props.group = 'mainGroup'; // TODO fix it
         return {
-            messages: ['test1', '2', '3']
+            messages: ['test1', '2', '3'],
         };
     },
     componentDidMount: function(){
         var self = this;
-        signalrClient.subscribe('sendMessage', function(msg){
-            self.state.messages.push(msg);
-            self.setState(self.state);
-        });
+        signalrClient.subscribe('sendMessage',
+            function(msg){
+                self.state.messages.push(msg);
+                self.setState(self.state);
+            },
+            function(){
+                signalrClient.connect(self.props.group);
+            }
+        );
     },
     componentWillUnmount: function(){
     },
@@ -17,7 +23,7 @@
         var node = this.getDOMNode();
         var input = node.querySelector('footer > input');
         var msg = input.value;
-        signalrClient.send(msg);
+        signalrClient.send(this.props.group, msg);
     },
     render: function() {
         return(  
