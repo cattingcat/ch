@@ -96,6 +96,7 @@ main > aside {
 main > article {
     background-color: white;  
     flex-grow: 4;
+    max-width: 70%;
 }
 
 nav {
@@ -183,6 +184,7 @@ div.chat > article {
 }
 div.chat > article > div {
     padding: 3px;
+    word-wrap: break-word;
 }
 div.chat > article > div:nth-child(odd){
     background-color: lightblue;
