@@ -11,11 +11,13 @@ var Chat = React.createClass({
             groupName = self.props.group,
             pwd = self.props.pwd;
 
+        var receiveMsg = function(msg){
+            self.state.messages.push(msg);
+            self.setState(self.state);
+        };
+
         signalrClient
-            .connect(function(msg){
-                self.state.messages.push(msg);
-                self.setState(self.state);
-            })
+            .connect(receiveMsg)
             .done(function(){
                 var result = signalrClient.join(groupName, pwd);
             });
@@ -34,7 +36,7 @@ var Chat = React.createClass({
         signalrClient.send(this.props.group, msg);
     },
     render: function() {
-        return(  
+        return(
         <div className="chat">
             <article>
                 {this.state.messages.map(function(i){

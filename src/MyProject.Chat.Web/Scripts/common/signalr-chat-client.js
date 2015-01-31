@@ -3,9 +3,9 @@
         $.connection.chatHub.server.send(group, msg);
     },
     connect: function (callback) {
-        var func = 'sendMessage'; // Backend func
+        var func = 'sendMessage';                       // Backend func
         $.connection.chatHub.client[func] = callback;
-        return $.connection.hub.start(); //async function .done()
+        return $.connection.hub.start();                //async function .done()
     },
     join: function (group, pwd) {
         return $.connection.chatHub.server.join(group, pwd);
