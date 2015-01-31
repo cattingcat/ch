@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MyProject.Chat.Web.Tests")]
+[assembly: AssemblyTitle("MyProject.Chat.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPAM Systems")]
-[assembly: AssemblyProduct("MyProject.Chat.Web.Tests")]
+[assembly: AssemblyProduct("MyProject.Chat.Web")]
 [assembly: AssemblyCopyright("Copyright © EPAM Systems 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0dad0774-3317-4f41-8e89-e4d0625268ee")]
+[assembly: Guid("5cc0027d-191c-4812-9ba0-453b5006ca65")]
 
 // Version information for an assembly consists of the following four values:
 //

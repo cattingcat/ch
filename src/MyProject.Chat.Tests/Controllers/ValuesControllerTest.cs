@@ -5,10 +5,10 @@ using System.Net.Http;
 using System.Text;
 using System.Web.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MyProject.Chat;
-using MyProject.Chat.Controllers;
+using MyProject.Chat.Web;
+using MyProject.Chat.Web.Controllers;
 
-namespace MyProject.Chat.Tests.Controllers
+namespace MyProject.Chat.Web.Tests.Controllers
 {
     [TestClass]
     public class ValuesControllerTest

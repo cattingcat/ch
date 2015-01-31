@@ -101,9 +101,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyProject.Chat\MyProject.Chat.csproj">
+    <ProjectReference Include="..\MyProject.Chat.Web\MyProject.Chat.Web.csproj">
       <Project>{87DA4E12-C956-4129-AE2A-D1F917D0EBCC}</Project>
-      <Name>MyProject.Chat</Name>
+      <Name>MyProject.Chat.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
