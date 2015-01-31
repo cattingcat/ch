@@ -13,17 +13,7 @@
     },
     componentWillUnmount: function(){
     },
-    send: function(){
-        var node = this.getDOMNode();
-        var input = node.querySelector('footer > input');
-        var msg = input.value;
-        this.state.messages.push(msg);
-
-        if(this.props.send) this.props.send(msg);
-
-        this.setState(this.state);
-    },
-    testSignalr: function(){
+    sendSignalr: function(){
         var node = this.getDOMNode();
         var input = node.querySelector('footer > input');
         var msg = input.value;
@@ -39,8 +29,7 @@
             </article>
             <footer>
                 <input type="text" /> 
-                <button onClick={this.send} > Send </button>
-                <button onClick={this.testSignalr} > Test SignalR </button>
+                <button onClick={this.sendSignalr} > Send </button>
             </footer>
         </div>);
     }
