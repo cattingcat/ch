@@ -1,28 +1,36 @@
-﻿var Chat = React.createClass({
+﻿if(typeof signalrClient === 'undefined') console.log('signalrClient required;');
+
+var Chat = React.createClass({
     getInitialState: function(){
-        this.props.group = 'mainGroup'; // TODO fix it
         return {
-            messages: ['test1', '2', '3'],
+            messages: [],
         };
     },
     componentDidMount: function(){
-        var self = this;
-        signalrClient.subscribe('sendMessage',
-            function(msg){
+        var self = this,
+            groupName = self.props.group,
+            pwd = self.props.pwd;
+
+        signalrClient
+            .connect(function(msg){
                 self.state.messages.push(msg);
                 self.setState(self.state);
-            },
-            function(){
-                signalrClient.connect(self.props.group);
-            }
-        );
+            })
+            .done(function(){
+                var result = signalrClient.join(groupName, pwd);
+            });
     },
     componentWillUnmount: function(){
+        var groupName = this.props.group;
+        signalrClient.leave(groupName);
     },
     sendSignalr: function(){
         var node = this.getDOMNode();
-        var input = node.querySelector('footer > input');
-        var msg = input.value;
+        var input = node.querySelector('footer > input[name="message"]');
+        var msg = {
+            text: input.value,
+            sender: this.props.userName
+        };
         signalrClient.send(this.props.group, msg);
     },
     render: function() {
@@ -30,11 +38,11 @@
         <div className="chat">
             <article>
                 {this.state.messages.map(function(i){
-                    return (<div> {i} </div>);
+                    return (<div> <strong> {i.sender} </strong>: {i.text} </div>);
                 })}
             </article>
             <footer>
-                <input type="text" /> 
+                <input type="text" name="message" /> 
                 <button onClick={this.sendSignalr} > Send </button>
             </footer>
         </div>);

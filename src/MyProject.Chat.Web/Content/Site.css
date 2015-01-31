@@ -192,8 +192,19 @@ div.chat > footer {
     padding: 3px;
     flex-grow: 1;
 }
-
-
+div.chat > div.form {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+div.chat > div.form > label {
+    margin: 5px;
+    align-self: center;
+}
+div.chat > div.form > label > span {
+    display:block;
+}
 
 
 

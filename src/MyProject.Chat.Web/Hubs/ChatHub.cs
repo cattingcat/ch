@@ -13,13 +13,21 @@ namespace MyProject.Chat.Web.Hubs
     {
         public Task Send(string group, dynamic message)
         {
-            // TODO fix
-            return Clients.Group(group).SendMessage(Context.ConnectionId.Substring(0, 5) + ": "+ message);
+            return Clients.Group(group).SendMessage(message);
         }
 
-        public Task Join(string group)
+        public int Join(string group, string pwd)
         {
-            return Groups.Add(Context.ConnectionId, group);
+            //TODO pwd from database
+            if (pwd == group)
+            {
+                Groups.Add(Context.ConnectionId, group);
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         public Task Leave(string group)

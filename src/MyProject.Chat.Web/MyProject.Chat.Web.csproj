@@ -135,7 +135,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\TestController.cs" />
@@ -162,7 +161,8 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\common\history.js" />
     <Content Include="Scripts\common\long-polling.js" />
-    <Content Include="Scripts\common\signalr-client.js" />
+    <Content Include="Scripts\common\route-module.js" />
+    <Content Include="Scripts\common\signalr-chat-client.js" />
     <Content Include="Scripts\common\web-socket.js" />
     <Content Include="Scripts\libs\jquery-1.6.4.min.js" />
     <Content Include="Scripts\libs\jquery.signalR-2.2.0.js" />
@@ -206,11 +206,11 @@
     <None Include="Properties\PublishProfiles\Build-Debug.pubxml" />
     <None Include="Properties\PublishProfiles\Build-Release.pubxml" />
     <None Include="readme.html" />
-    <Content Include="Scripts\components\main-view.jsx" />
     <Content Include="Scripts\components\theme.jsx" />
     <Content Include="Scripts\components\history-log.jsx" />
     <Content Include="Scripts\components\timer.jsx" />
     <Content Include="Scripts\components\chat.jsx" />
+    <Content Include="Scripts\components\chat-login.jsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
