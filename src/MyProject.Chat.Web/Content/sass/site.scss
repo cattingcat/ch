@@ -1,4 +1,15 @@
-﻿@font-face {
+﻿$headerColor: #1F807B;
+$shadow: 0px 0px 17px 0px rgba(50, 50, 50, 0.93);
+
+@mixin shadow-hover {
+	box-shadow: 0px 0px 7px 0px rgba(50, 50, 50, 0.93);
+	transition: box-shadow 100ms linear;
+	&:hover {
+		box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.93);
+	}
+}
+
+@font-face {
     font-family: oswald-light;
     src: url(/fonts/oswald/Oswald-Light.ttf);
 }
@@ -17,14 +28,16 @@ body {
 
 header, 
 footer {
-    background-color: #1F807B
+    background-color: $headerColor;
 }
 
-article, aside {
+article, 
+aside {
     padding: 25px;
 }
 
 button {
+	@include shadow-hover;
     text-transform: uppercase;
     border-radius: 0;
     border-width: 0;
@@ -49,7 +62,7 @@ button {
 body {
 	> footer, > header {
 	    width: 100%;
-	    box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.93);
+	    box-shadow: $shadow;
 	    
 	    display: flex;
 	    flex-direction: row;
@@ -58,8 +71,8 @@ body {
     }
 
 	> main {
-	    padding-top: 25px; /* after header */
-	    min-height: calc(100% - 80px); /* -footer.height */
+	    padding-top: 25px; 				/* after header */
+	    min-height: calc(100% - 80px); 	/* -footer.height */
 
 	    display: flex;
 	    flex-direction: row;
@@ -134,7 +147,7 @@ nav {
 div.theme {
     background-color: #e6eef2;
 
-    box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.93);
+    box-shadow: $shadow;
 
     display: flex;
     flex-direction: column;
@@ -183,7 +196,7 @@ div.chat {
     justify-content: flex-start;
 
     background-color: aliceblue;
-    box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.93);
+    box-shadow: $shadow;
 
     > article {
     	flex-grow: 4;
