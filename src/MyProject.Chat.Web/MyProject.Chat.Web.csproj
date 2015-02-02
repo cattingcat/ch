@@ -203,6 +203,7 @@
     <Content Include="fonts\oswald\Oswald-RegularItalic.ttf" />
     <Content Include="fonts\oswald\Oswald-Stencil.otf" />
     <Content Include="Handlers\WebSocketHandler.ashx" />
+    <None Include="Content\sass\site.scss" />
     <None Include="Properties\PublishProfiles\Build-Debug.pubxml" />
     <None Include="Properties\PublishProfiles\Build-Release.pubxml" />
     <None Include="readme.html" />
@@ -210,7 +211,6 @@
     <Content Include="Scripts\components\history-log.jsx" />
     <Content Include="Scripts\components\timer.jsx" />
     <Content Include="Scripts\components\chat.jsx" />
-    <Content Include="Scripts\components\chat-login.jsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

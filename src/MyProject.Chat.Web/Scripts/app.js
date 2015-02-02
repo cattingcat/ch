@@ -11,7 +11,7 @@ React.render(
 
 var routing = [
     { pattern: /.*theme.*/, component: Theme },
-    { pattern: /.*chat.*/, component: ChatLogin },
+    { pattern: /.*chat.*/, component: Chat },
 ]
 
 var view = document.querySelector('main > article');

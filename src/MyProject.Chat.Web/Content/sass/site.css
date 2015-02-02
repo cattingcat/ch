@@ -13,9 +13,6 @@ body {
 header, footer {
   background-color: #1F807B; }
 
-article, aside {
-  padding: 25px; }
-
 button {
   text-transform: uppercase;
   border-radius: 0;
@@ -40,22 +37,6 @@ body > footer, body > header {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around; }
-body > main {
-  padding-top: 25px;
-  /* after header */
-  min-height: calc(100% - 80px);
-  /* -footer.height */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start; }
-  body > main > aside {
-    background-color: lightblue;
-    flex-grow: 1; }
-  body > main > article {
-    background-color: white;
-    flex-grow: 4;
-    max-width: 70%; }
 
 body > header {
   position: fixed;
@@ -75,25 +56,54 @@ header nav {
   flex-grow: 4;
   font-size: 20pt; }
 
+article {
+  padding: 25px; }
+
+aside {
+  padding: 25px; }
+
+body > main {
+  padding-top: 25px;
+  /* after header */
+  min-height: calc(100% - 80px);
+  /* -footer.height */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start; }
+
+main > aside {
+  background-color: lightblue;
+  flex-grow: 1; }
+
+main > article {
+  background-color: white;
+  flex-grow: 4;
+  max-width: 70%; }
+
 nav {
   text-transform: uppercase; }
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: space-around;
-    margin: 0;
-    text-shadow: 2px 2px 4px #000000; }
-    nav ul li {
-      font-size: 11pt;
-      display: block;
-      cursor: default; }
-      nav ul li a:link, nav ul li a:visited, nav ul li a:link:active, nav ul li a:visited:active {
-        text-decoration: none;
-        cursor: auto;
-        color: black; }
-      nav ul li a:hover {
-        color: #fff; }
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+  margin: 0;
+  text-shadow: 2px 2px 4px #000000; }
+
+nav ul li {
+  font-size: 11pt;
+  display: block;
+  cursor: default; }
+
+li a:link, a:visited, a:link:active, a:visited:active {
+  text-decoration: none;
+  cursor: auto;
+  color: black; }
+
+nav ul li a:hover {
+  color: #fff; }
 
 div.theme {
   background-color: #e6eef2;
